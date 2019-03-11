@@ -1,0 +1,9 @@
+for i in dev-decapp02.aws.phenom.local ; do 
+ssh -t -i /home/venkatvenna/.ssh/venkat_venna.pem venkat_venna@$i <<EOF
+sudo -i
+cat /etc/passwd|grep tulasin ;
+if [ $? -eq 0 ]; then
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCotyNF4BnG5HnY1x2TTjGAzHJkVuITqhiFWSSInPSTjZ4OSm5SVpqXP5oXUzzE8Tus188iOFsDcSsmJsfJ3lKk8LOAVr+UseYzxfRcfKyD9wS+/ApNzgB0Ve8K2zh49D+u9eFvBp/u9pgBlPb4bKB5jf3Owu3kj1L8YhwpcsG5QK6YpUu2vMq4PgX9LuqHqYGRH6h15FfBM8udIkdptris107ZZGbkRGSCq5nC+pbJB6y3vOIRUMqIfSFoFnrDnLfqNT/t0B6sYyTnqUPFzjVqeNOt4FoOylGFYvGiaeRRNaKh9IGT/08XMzZSmrYd/vP85LGtt0NEHNNzkRzX1Sll" > /home/tulasin/.ssh/authorized_keys
+cat /home/tulasin/.ssh/authorized_keys;fi
+EOF
+done
